@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    title: `Prist | Gatsby & Prismic Starter`,
+    title: `Ionwyn Sean`,
         description: `A starter powered by Gatsby and Prismic to showcase portfolios and blogs.`,
     author: `Marguerite Roth | marguerite.io`,
   },

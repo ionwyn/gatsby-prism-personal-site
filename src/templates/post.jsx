@@ -60,7 +60,7 @@ const PostTitle = styled("div")`
 `
 
 const PostBody = styled("div")`
-    max-width: 550px;
+    max-width: 800;
     margin: 0 auto;
 
     .block-img {
@@ -96,7 +96,7 @@ const Post = ({ post, meta }) => {
     return (
         <>
             <Helmet
-                title={`${post.post_title[0].text} | Prist, Gatsby & Prismic Starter`}
+                title={`${post.post_title[0].text}`}
                 titleTemplate={`%s | ${meta.title}`}
                 meta={[
                     {
@@ -105,7 +105,7 @@ const Post = ({ post, meta }) => {
                     },
                     {
                         property: `og:title`,
-                        content: `${post.post_title[0].text} | Prist, Gatsby & Prismic Starter`,
+                        content: `${post.post_title[0].text}`,
                     },
                     {
                         property: `og:description`,
@@ -157,7 +157,7 @@ const Post = ({ post, meta }) => {
                     </PostHeroContainer>
                 )}
                 <PostBody>
-                    {RichText.render(post.post_body)}
+                    <div className="content" dangerouslySetInnerHTML={{__html: RichText.asText(post.post_body)}}></div>
                 </PostBody>
             </Layout>
         </>
